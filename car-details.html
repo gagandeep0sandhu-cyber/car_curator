@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Details &amp; Specifications — Car Curator</title>
+  <meta name="description" content="View complete technical specifications, verified performance data, design overview, and high-resolution multi-angle photography on Car Curator.">
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">CAR <span>CURATOR</span></a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="cars.html">Cars</a></li>
+          <li><a href="categories.html">Explore</a></li>
+          <li><a href="brands.html">Browse</a></li>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-bar" action="cars.html" method="get">
+        <input type="text" name="search" placeholder="Search cars, brands or models..." aria-label="Search cars, brands or models">
+        <button type="submit">Search</button>
+      </form>
+
+    </div>
+  </header>
+
+  <!-- Container Populated Dynamically via script.js initCarDetailsPage() -->
+  <main id="car-details-container">
+    <div class="container" style="padding: 60px 0; text-align: center;">
+      <div class="empty-state">
+        <div class="empty-icon">⏳</div>
+        <h3>Loading Vehicle Specifications...</h3>
+        <p>Retrieving high-resolution photography, technical data, and editorial notes from the archive.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>CAR <span>CURATOR</span></h3>
+        <p>Explore. Discover. Drive.</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="categories.html">Explore</a></li>
+        <li><a href="brands.html">Browse</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <p class="copyright">&copy; 2026 Car Curator. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

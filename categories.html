@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore by Category &amp; Body Style — Car Curator</title>
+  <meta name="description" content="Explore vehicles categorized by body style, from Supercars and Coupes to Luxury SUVs, Sedans, 4x4s, and MPVs with complete technical specifications.">
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">CAR <span>CURATOR</span></a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="cars.html">Cars</a></li>
+          <li><a href="categories.html" class="active">Explore</a></li>
+          <li><a href="brands.html">Browse</a></li>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-bar" action="cars.html" method="get">
+        <input type="text" name="search" placeholder="Search cars, brands or models..." aria-label="Search cars, brands or models">
+        <button type="submit">Search</button>
+      </form>
+
+    </div>
+  </header>
+
+  <!-- ============ NETCARSHOW A–Z QUICK BRAND STRIP ============ -->
+  <div class="az-bar">
+    <div class="container az-inner">
+      <span class="az-label">Quick Brand:</span>
+      <div class="az-letters">
+        <a href="cars.html">All</a>
+        <a href="cars.html?brand=Aston%20Martin">Aston Martin</a>
+        <a href="cars.html?brand=Audi">Audi</a>
+        <a href="cars.html?brand=BMW">BMW</a>
+        <a href="cars.html?brand=Bugatti">Bugatti</a>
+        <a href="cars.html?brand=Chevrolet">Chevrolet</a>
+        <a href="cars.html?brand=Ferrari">Ferrari</a>
+        <a href="cars.html?brand=Ford">Ford</a>
+        <a href="cars.html?brand=Hyundai">Hyundai</a>
+        <a href="cars.html?brand=Kia">Kia</a>
+        <a href="cars.html?brand=Lamborghini">Lamborghini</a>
+        <a href="cars.html?brand=Mahindra">Mahindra</a>
+        <a href="cars.html?brand=Maruti%20Suzuki">Maruti Suzuki</a>
+        <a href="cars.html?brand=McLaren">McLaren</a>
+        <a href="cars.html?brand=Mercedes-AMG">Mercedes-AMG</a>
+        <a href="cars.html?brand=Porsche">Porsche</a>
+        <a href="cars.html?brand=Tata">Tata</a>
+        <a href="cars.html?brand=Tesla">Tesla</a>
+        <a href="cars.html?brand=Toyota">Toyota</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav class="breadcrumbs">
+    <div class="container">
+      <a href="index.html">Home</a> &gt; <span>Explore by Category &amp; Body Style</span>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 36px; padding-bottom: 60px;">
+    
+    <div class="section-heading" style="text-align: left; margin-bottom: 24px; padding: 0;">
+      <h2>Explore by Category &amp; Body Style</h2>
+      <p>Browse vehicles grouped by automotive architecture and body style. Every vehicle is presented with its complete technical specifications, power output, performance benchmarks, and pricing.</p>
+    </div>
+
+    <!-- Filter & Search Controls Bar -->
+    <section class="filter-bar">
+      
+      <!-- Category Filter Pills (NetCarShow Explore Style) -->
+      <div class="category-filter-pills" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+        <button type="button" class="btn-secondary btn-sm active" data-category="all">All Types</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="SUVs">SUVs &amp; 4x4s</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="Sedans">Sedans</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="Hatchbacks">Hatchbacks</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="Coupes">Coupes</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="Supercar">Supercars</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="Sports Car">Sports Cars</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="MPVs">MPVs</button>
+        <button type="button" class="btn-secondary btn-sm" data-category="Electric">Electric &amp; Hybrid</button>
+      </div>
+
+      <div class="filter-grid" style="grid-template-columns: 1fr;">
+        <!-- Live Search Input -->
+        <div class="filter-group">
+          <label for="category-search-input">Search Within Body Styles</label>
+          <input type="text" id="category-search-input" class="filter-input" placeholder="Type make, model or keyword (e.g. Creta, Dzire, 911, SUV, V12)...">
+        </div>
+      </div>
+
+      <!-- Action Row: Results Count & View Mode Toggle -->
+      <div class="filter-actions" style="margin-top: 20px;">
+        <div id="categories-results-count" class="results-meta">Loading vehicles...</div>
+        
+        <div class="filter-controls-right">
+          <!-- NetCarShow Grid vs List Switcher -->
+          <div class="view-mode-toggle" role="group" aria-label="Display View Mode">
+            <button id="view-grid-btn" class="view-btn active" title="Grid View">
+              <span>☵</span> Grid
+            </button>
+            <button id="view-list-btn" class="view-btn" title="List View">
+              <span>☰</span> List
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Dynamic Results Grid/List (Populated via script.js) -->
+    <div id="categories-results-grid" class="car-grid" style="margin-top: 28px;"></div>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>CAR <span>CURATOR</span></h3>
+        <p>Explore. Discover. Drive.</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="categories.html">Explore</a></li>
+        <li><a href="brands.html">Browse</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <p class="copyright">&copy; 2026 Car Curator. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

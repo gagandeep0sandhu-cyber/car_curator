@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Vehicles — Side-by-Side &amp; 360 Visual Studio | Car Curator</title>
+  <meta name="description"
+    content="Compare two cars side-by-side with Carshow360-style visual tools including Face-to-Face, Split Slider, and Phantom Ghost Overlay, along with detailed technical specifications.">
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">CAR <span>CURATOR</span></a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="cars.html">Cars</a></li>
+          <li><a href="categories.html">Explore</a></li>
+          <li><a href="brands.html">Browse</a></li>
+          <li><a href="compare.html" class="active">Compare</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-bar" action="cars.html" method="get">
+        <input type="text" name="search" placeholder="Search cars, brands or models..."
+          aria-label="Search cars, brands or models">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- ============ NETCARSHOW A–Z QUICK BRAND STRIP ============ -->
+  <div class="az-bar">
+    <div class="container az-inner">
+      <span class="az-label">Quick Brand:</span>
+      <div class="az-letters">
+        <a href="cars.html">All</a>
+        <a href="cars.html?brand=Aston%20Martin">Aston Martin</a>
+        <a href="cars.html?brand=Audi">Audi</a>
+        <a href="cars.html?brand=BMW">BMW</a>
+        <a href="cars.html?brand=Bugatti">Bugatti</a>
+        <a href="cars.html?brand=Chevrolet">Chevrolet</a>
+        <a href="cars.html?brand=Ferrari">Ferrari</a>
+        <a href="cars.html?brand=Ford">Ford</a>
+        <a href="cars.html?brand=Hyundai">Hyundai</a>
+        <a href="cars.html?brand=Kia">Kia</a>
+        <a href="cars.html?brand=Lamborghini">Lamborghini</a>
+        <a href="cars.html?brand=Mahindra">Mahindra</a>
+        <a href="cars.html?brand=Maruti%20Suzuki">Maruti Suzuki</a>
+        <a href="cars.html?brand=McLaren">McLaren</a>
+        <a href="cars.html?brand=Mercedes-AMG">Mercedes-AMG</a>
+        <a href="cars.html?brand=Porsche">Porsche</a>
+        <a href="cars.html?brand=Tata">Tata</a>
+        <a href="cars.html?brand=Tesla">Tesla</a>
+        <a href="cars.html?brand=Toyota">Toyota</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav class="breadcrumbs">
+    <div class="container">
+      <a href="index.html">Home</a> &gt; <span>Vehicle Comparison Studio</span>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 36px; padding-bottom: 80px;">
+
+    <!-- Title & Description -->
+    <div class="section-heading" style="text-align: left; margin-bottom: 24px; padding: 0;">
+      <div class="compare-title-badge">STUDIO COMPARISON &bull; CARSHOW360 ENGINE</div>
+      <h2>Visual &amp; Technical Vehicle Comparison</h2>
+      <p>Select any two vehicles to analyze exterior styling, silhouette overlays, interior ergonomics, and complete
+        technical specifications side-by-side.</p>
+    </div>
+
+    <!-- Quick Presets -->
+    <div class="compare-presets-bar">
+      <span class="presets-label">Popular Rivalries:</span>
+      <div class="presets-pills" id="compare-presets-container">
+        <button type="button" class="preset-pill" data-car1="ferrari-296-gtb" data-car2="porsche-911-gt3-rs">Ferrari 296
+          GTB vs Porsche 911 GT3 RS</button>
+        <button type="button" class="preset-pill" data-car1="porsche-911-gt3-rs" data-car2="bmw-m4-competition">Porsche
+          911 GT3 RS vs BMW M4 Competition</button>
+        <button type="button" class="preset-pill" data-car1="ferrari-sf90-stradale"
+          data-car2="lamborghini-revuelto">Ferrari SF90 vs Lamborghini Revuelto</button>
+        <button type="button" class="preset-pill" data-car1="tata-harrier" data-car2="mahindra-xuv700">Tata Harrier vs
+          Mahindra XUV700</button>
+        <button type="button" class="preset-pill" data-car1="tesla-model-s-plaid"
+          data-car2="porsche-taycan-turbo-s">Tesla Model S Plaid vs Taycan Turbo S</button>
+      </div>
+    </div>
+
+    <!-- Dual Vehicle Selector Bar -->
+    <div class="compare-selector-card">
+      <div class="selector-column">
+        <label for="compare-select-1" class="selector-label">
+          <span class="selector-dot dot-car1"></span> Car 1
+        </label>
+        <select id="compare-select-1" class="compare-select" aria-label="Select Car 1">
+          <option value="">Loading database...</option>
+        </select>
+      </div>
+
+      <div class="selector-swap-col">
+        <button type="button" id="swap-cars-btn" class="btn-swap" title="Swap Car 1 and Car 2"
+          aria-label="Swap Car 1 and Car 2">
+          <span>⇄</span>
+        </button>
+      </div>
+
+      <div class="selector-column">
+        <label for="compare-select-2" class="selector-label">
+          <span class="selector-dot dot-car2"></span> Car 2
+        </label>
+        <select id="compare-select-2" class="compare-select" aria-label="Select Car 2">
+          <option value="">Loading database...</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Visual Studio Toolbar: Carshow360 Modes & Angles -->
+    <div class="studio-toolbar">
+      <div class="mode-tabs" id="compare-mode-tabs">
+        <button type="button" class="mode-tab active" data-mode="side-by-side">
+          <span class="tab-icon">👥</span> Face to Face
+        </button>
+        <button type="button" class="mode-tab" data-mode="split-slider">
+          <span class="tab-icon">↔️</span> Split Slider
+        </button>
+        <button type="button" class="mode-tab" data-mode="phantom">
+          <span class="tab-icon">👻</span> Phantom Overlay
+        </button>
+        <button type="button" class="mode-tab" data-mode="interior">
+          <span class="tab-icon">💺</span> Interior Duel
+        </button>
+      </div>
+
+      <div class="angle-toggles" id="compare-angle-toggles">
+        <span class="angle-label">Perspective:</span>
+        <button type="button" class="angle-btn active" data-angle="front">Front 3/4</button>
+        <button type="button" class="angle-btn" data-angle="side">Profile</button>
+        <button type="button" class="angle-btn" data-angle="rear">Rear</button>
+        <button type="button" class="angle-btn" data-angle="interior">Interior</button>
+        <button type="button" class="angle-btn" data-angle="engine">Engine</button>
+      </div>
+    </div>
+
+    <!-- Visual Comparison Display Stage -->
+    <section class="compare-stage" id="compare-stage">
+      <!-- Dynamically filled via script.js -->
+      <div class="stage-loading">Loading studio comparison...</div>
+    </section>
+
+    <!-- Phantom Effect Controls (Shown when Phantom Mode is active) -->
+    <div id="phantom-controls" class="phantom-controls-card" style="display: none;">
+      <div class="phantom-slider-header">
+        <span id="phantom-car1-name" class="phantom-car-tag car1-tag">Car 1</span>
+        <div class="phantom-slider-wrap">
+          <label for="phantom-range" class="phantom-slider-label">Carshow360 Phantom Ghost Opacity</label>
+          <input type="range" id="phantom-range" min="0" max="100" value="50" class="phantom-range"
+            aria-label="Phantom Opacity Slider">
+        </div>
+        <span id="phantom-car2-name" class="phantom-car-tag car2-tag">Car 2</span>
+      </div>
+      <p class="phantom-hint">💡 Drag the slider to seamlessly superimpose both vehicle silhouettes and compare
+        rooflines, overhangs, wheelbase, and proportions.</p>
+    </div>
+
+    <!-- Key Performance & Dimension Bar Duel -->
+    <section class="compare-metrics-section">
+      <div class="section-heading" style="text-align: left; margin-bottom: 24px; padding: 0;">
+        <h3>Direct Performance &amp; Dimension Metrics</h3>
+        <p>Dynamic visual bars showing head-to-head advantages and benchmark winners.</p>
+      </div>
+
+      <div class="metrics-grid" id="compare-metrics-grid">
+        <!-- Rendered via script.js -->
+      </div>
+    </section>
+
+    <!-- Comprehensive Specification Matrix Table -->
+    <section class="compare-specs-section">
+      <div class="section-heading" style="text-align: left; margin-bottom: 24px; padding: 0;">
+        <h3>Detailed Technical Specification Matrix</h3>
+        <p>Complete mechanical and architectural breakdown side-by-side.</p>
+      </div>
+
+      <div class="specs-table-wrap" id="compare-specs-table-wrap">
+        <!-- Rendered via script.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>CAR <span>CURATOR</span></h3>
+        <p>Explore. Discover. Drive.</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="categories.html">Explore</a></li>
+        <li><a href="brands.html">Browse</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <p class="copyright">&copy; 2026 Car Curator. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
